@@ -61,7 +61,7 @@ sgt.plot_acf(dfTrain.marketValue, lags=40, zero=False)
 plt.title("ACF SPX", size=24)
 # plt.show()
 
-# Se observa que practicamente todas las lineas estan dentro la zona sombreada en azul
+# Se observa que practicamente todas las lineas estan dentro de la sombreada en azul
 # Esto sugiere que los coeficientes no son significativos
 # por lo que es un indicador de que no existe una dependencia del tiempo en los datos
 # no existe autocorrelacion
@@ -86,26 +86,29 @@ plt.title("ACF RW", size=24)
 # en la autocorrelacion parcial se calcula solo la correlacion directa
 # es decir, como afecta el dia 1 al dia 4, el dia 2 al dia 4, el dia 3 al dia 4
 
-# Se observa que todas las lineas son mas altas que la zona sombreada en azul
-# Esto sugiere que los coeficientes son significativos
-# por lo que es un indicador de la dependencia del tiempo en los datos
-# existe autocorrelacion
+# Se observa que practicamente todas las lineas estan dentro de la sombreada en azul
+# Esto sugiere que los coeficientes no son significativamente diferentes de cero
+# por lo que es un indicador de que no existe una dependencia del tiempo en los datos
+# no existe autocorrelacion
 sgt.plot_pacf(dfTrain.marketValue, lags=40, zero=False, method="ols")
 plt.title("PACF SPX", size=24)
 # plt.show()
 
-# Se observa que practicamente todas las lineas estan dentro la zona sombreada en azul
-# Esto sugiere que los coeficientes no son significativos
+# Se observa que practicamente todas las lineas estan dentro de la sombreada en azul
+# Esto sugiere que los coeficientes no son significativamente diferentes de cero
 # por lo que es un indicador de que no existe una dependencia del tiempo en los datos
 # no existe autocorrelacion
 sgt.plot_pacf(dfTrain.wn, lags=40, zero=False, method="ols")
 plt.title("PACF WN", size=24)
 # plt.show()
 
-# Se observa que todas las lineas son mas altas que la zona sombreada en azul
-# Esto sugiere que los coeficientes son significativos
-# por lo que es un indicador de la dependencia del tiempo en los datos
-# existe autocorrelacion
+# Se observa que practicamente todas las lineas estan dentro de la sombreada en azul
+# Esto sugiere que los coeficientes no son significativamente diferentes de cero
+# por lo que es un indicador de que no existe una dependencia del tiempo en los datos
+# no existe autocorrelacion
 sgt.plot_pacf(dfTrain.rw, lags=40, zero=False, method="ols")
 plt.title("PACF RW", size=24)
 plt.show()
+
+# Se concluye que la autocorrelacion existe solo gracias a efectos indirectos
+# y no por efectos directos de dias anteriores
